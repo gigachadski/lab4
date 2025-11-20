@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
+  <title>WebDev Logo</title>
+  <rect x="5" y="5" width="90" height="90" rx="15" fill="#4a89c8" />
+  
+  <path d="M30 35 L 45 65 L 60 35 L 75 65 L 85 30" 
+        stroke="#ffffff" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+</svg>

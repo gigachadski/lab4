@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Web Development</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="subpage"> <header class="header">
+        <div class="container header-flex">
+             <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="WebDev Logo" class="logo-img">
+            </a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a> </nav>
+            <div class="mobile-burger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Зв'яжіться з нами</h1>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container grid-2-cols contact-grid">
+                
+                <div class="text-content">
+                    <h2>Наші контакти</h2>
+                    <p>Ми завжди раді обговорити ваш наступний проект. Зв'яжіться з нами будь-яким зручним способом.</p>
+                    
+                    <div class="contact-info-block">
+                        <h3>Адреса</h3>
+                        <p>м. Київ, вул. Прикладна, 123, Офіс 45</p>
+                    </div>
+                     <div class="contact-info-block">
+                        <h3>Телефон</h3>
+                        <p>+38 (044) 123-45-67</p>
+                    </div>
+                     <div class="contact-info-block">
+                        <h3>Email</h3>
+                        <p>info@webdev-example.com</p>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <h2>Напишіть нам</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ваше ім'я</label>
+                            <input type="text" id="name" name="name" placeholder="Іван Іванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Ваш Email</label>
+                            <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Повідомлення</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Розкажіть про ваш проект..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Надіслати повідомлення</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 Web Development. Всі права захищені.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
