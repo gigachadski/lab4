@@ -1,6 +1,4 @@
-/* =========================================
-   ЗАГАЛЬНІ НАЛАШТУВАННЯ (База)
-   ========================================= */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -18,12 +16,12 @@ body {
 
 img { width: 100%; display: block; }
 
-/* --- Стилі шапки (Header) --- */
+
 .header { padding: 20px 0; }
 .header-flex { display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 24px; font-weight: bold; color: #ccc; text-transform: lowercase; }
 
-/* --- Стилі синього блоку (загальні) --- */
+
 .info-box {
     background-color: #4a89c8;
     color: white;
@@ -38,38 +36,35 @@ img { width: 100%; display: block; }
 }
 .btn:hover { background: white; color: #4a89c8; }
 
-/* --- Стилі футера --- */
+
 .footer { background: #333; color: white; text-align: center; padding: 50px 20px; margin-top: 50px; }
 
 
-/* =========================================
-   ЧАСТИНА 1: ДЕСКТОПНА ВЕРСІЯ (PC / Ноутбук)
-   (Ці стилі працюють, коли ширина > 900px)
-   ========================================= */
+
 @media (min-width: 901px) {
     
-    /* Фон: Сірий зверху (60%), білий знизу */
+   
     body {
         background: linear-gradient(to bottom, #eef1f5 65%, #fff 65%);
         min-height: 100vh;
     }
 
-    /* Меню: показуємо посилання, ховаємо гамбургер */
+    
     .desktop-nav a { text-decoration: none; color: #666; margin-left: 30px; font-size: 14px; }
     .desktop-nav a:hover { color: #4a89c8; }
     .mobile-burger { display: none; }
 
-    /* Грід-розмітка (CSS Grid) для накладання елементів */
+   
     .hero-wrapper {
         display: grid;
-        grid-template-columns: repeat(12, 1fr); /* 12 колонок */
+        grid-template-columns: repeat(12, 1fr); 
         grid-template-rows: auto auto;
         padding-top: 50px;
     }
 
-    /* 1. Фото команди (ззаду) */
+   
     .img-team-wrapper {
-        grid-column: 4 / 11; /* Розміщення з 5 по 11 колонку */
+        grid-column: 4 / 11; 
         grid-row: 1 / 2;
         z-index: 1;
     }
@@ -81,13 +76,13 @@ img { width: 100%; display: block; }
         margin-top: 80px;
         position: relative;
         
-        /* Додатковий зсув вліво за межі сітки */
+        
         transform: translateX(-50px); 
     }
 
-    /* 3. Синій блок (справа, перекриває всіх) */
+    
   .info-box {
-        /* Змінили 8 / 12 на 9 / 13 -> зсунули на одну колонку вправо */
+        
         grid-column: 9 / 13; 
         grid-row: 1 / 3;
         z-index: 3;
@@ -97,18 +92,15 @@ img { width: 100%; display: block; }
 }
 
 
-/* =========================================
-   ЧАСТИНА 2: МОБІЛЬНА ВЕРСІЯ (Телефон)
-   (Ці стилі переписують десктоп, коли ширина <= 900px)
-   ========================================= */
+
 @media (max-width: 900px) {
     
-    /* Фон: Сірий блок тільки зверху */
+    
     body {
         background: linear-gradient(to bottom, #eef1f5 450px, #fff 450px);
     }
 
-    /* Меню: Ховаємо посилання, показуємо гамбургер */
+    
     .desktop-nav { display: none; }
     
     .mobile-burger {
@@ -118,105 +110,101 @@ img { width: 100%; display: block; }
         display: block; width: 25px; height: 3px; background-color: #333;
     }
 
-    /* Вимикаємо Grid, робимо звичайний Flex-стовпчик */
+   
     .hero-wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центруємо все */
+        align-items: center; 
         padding-top: 20px;
     }
 
-    /* Порядок елементів (Фото команди -> Жінка -> Текст) */
+   
     
-    /* 1. Фото команди */
+  
     .img-team-wrapper {
         width: 100%;
         max-width: 500px;
-        margin-bottom: -40px; /* Негативний відступ, щоб жінка наїхала на це фото */
+        margin-bottom: -40px; 
         z-index: 1;
     }
 
-    /* 2. Фото жінки */
+    
     .img-woman-wrapper {
-        width: 90%;           /* Трохи менше ширини екрану */
+        width: 90%;          
         max-width: 350px;
         z-index: 2;
         position: relative;
     }
 
-    /* 3. Синій блок */
+    
     .info-box {
         width: 90%;
         max-width: 400px;
         z-index: 3;
-        margin-top: -60px;    /* Тягнемо блок вгору на фото жінки */
-        transform: translateX(20px); /* Трохи зсуваємо вправо, як на дизайні */
+        margin-top: -60px;   
+        transform: translateX(20px); 
     }
 }
-/* =========================================
-   НОВІ СТИЛІ ДЛЯ ПІДСТОРІНОК (About, Contact)
-   Додайте це в кінець файлу style.css
-   ========================================= */
 
-/* --- Стилі для SVG Лого --- */
+
+
 .logo-link { display: block; }
 .logo-img {
-    width: 50px; /* Розмір лого */
+    width: 50px; 
     height: auto;
     transition: transform 0.3s ease;
 }
 .logo-link:hover .logo-img {
-    transform: scale(1.1); /* Ефект при наведенні */
+    transform: scale(1.1); 
 }
 
-/* --- Активне посилання в меню --- */
+
 .desktop-nav a.active {
     color: #4a89c8;
     font-weight: 700;
 }
 
-/* --- Скидання фону для підсторінок --- */
-/* На головній у нас складний градієнт. На підсторінках ми хочемо простіший фон */
+
 body.subpage {
-    background: #fff; /* Просто білий фон */
+    background: #fff; /
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 body.subpage main {
-    flex: 1; /* Це притисне футер до низу, якщо контенту мало */
+    flex: 1; 
 }
 
 
-/* --- Загальні блоки підсторінок --- */
+
 .page-header {
-    background-color: #eef1f5; /* Сірий фон для заголовка */
+    background-color: #eef1f5;
     padding: 60px 0;
     text-align: center;
 }
 .page-header h1 { font-size: 36px; color: #333; }
 
 .section-padding {
-    padding: 80px 0; /* Відступи для секцій з контентом */
+    padding: 80px 0; 
 }
 
-/* Проста сітка на 2 колонки для About та Contact */
+
 .grid-2-cols {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Дві рівні колонки */
-    gap: 60px; /* Відстань між колонками */
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
     align-items: center;
 }
 
-/* Список з маркерами на сторінці About */
+
 .feature-list { margin-top: 20px; margin-left: 20px; }
 .feature-list li { margin-bottom: 10px; color: #555; }
 
-/* --- Стилі для сторінки Контактів --- */
+
 .contact-info-block { margin-bottom: 30px; }
 .contact-info-block h3 { color: #4a89c8; margin-bottom: 10px; font-size: 18px; }
 
-/* Стилі форми */
+
 .form-container {
     background: #f9f9f9;
     padding: 40px;
@@ -252,17 +240,14 @@ body.subpage main {
 .btn-primary:hover { background-color: #357abd; }
 
 
-/* =========================================
-   АДАПТИВНІСТЬ ДЛЯ ПІДСТОРІНОК (Мобільна)
-   ========================================= */
+
 @media (max-width: 900px) {
-    /* Перетворюємо сітку на одну колонку */
     .grid-2-cols {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    /* На сторінці контактів міняємо порядок: спочатку форма, потім контакти */
+   
     .contact-grid {
         display: flex;
         flex-direction: column-reverse;
@@ -271,4 +256,5 @@ body.subpage main {
     .form-container { padding: 30px 20px; }
     .page-header { padding: 40px 0; }
     .page-header h1 { font-size: 28px; }
+
 }
