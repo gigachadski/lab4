@@ -56,6 +56,19 @@
         </div>
     </footer>
 
-</body>
+<script>
+        const burger = document.querySelector('.mobile-burger');
+        const nav = document.querySelector('.desktop-nav');
 
+        burger.addEventListener('click', () => {
+            // Перемикаємо клас 'active' для меню і кнопки
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+            
+            // Блокуємо прокрутку сторінки, коли меню відкрите
+            document.body.classList.toggle('no-scroll');
+        });
+    </script>
+</body>
 </html>
+
